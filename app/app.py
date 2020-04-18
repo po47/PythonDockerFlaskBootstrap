@@ -18,7 +18,7 @@ def cities_import() -> List[Dict]:
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute('SELECT * FROM tblCitiesImport')
+    cursor.execute('SELECT * FROM tblCitiesImport ORDER by fldCountry, fldName')
     result = cursor.fetchall()
 
     cursor.close()
@@ -29,7 +29,7 @@ def cities_import() -> List[Dict]:
 
 @app.route('/')
 def index():
-    user = {'username': 'Miguel'}
+    user = {'username': 'Paulina'}
     cities_data = cities_import()
 
     return render_template('index.html', title='Home', user=user, cities=cities_data)

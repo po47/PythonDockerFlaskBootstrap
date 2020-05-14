@@ -1,46 +1,48 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/edit/{{city.id}}" method="post">
+<form action="/edit/{{homestat.id}}" method="post">
     <div class="row">
         <div class="col">
-            <label for="fldName">City Name</label>
-            <input class="form-control" id="fldName" name="fldName" placeholder="City Name" type="text" value="{{city.fldName}}">
-        </div>
-
-        <div class="col">
-            <label for="fldAbbreviation">City Abbreviation</label>
-            <input class="form-control" id="fldAbbreviation" name="fldAbbreviation" placeholder="City Abbreviation"
-                   type="text" value="{{city.fldAbbreviation}}">
-        </div>
-
-        <div class="col">
-            <label for="fldCountry">City Country</label>
-            <input class="form-control" id="fldCountry" name="fldCountry" placeholder="City Country" type="text" value="{{city.fldCountry}}">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <label for="fldLat">City Latitude</label>
-            <input class="form-control" id="fldLat" name="fldLat" placeholder="City Latitude" type="text" value="{{city.fldLat}}">
+            <label for="Street">Street</label>
+            <input id="Street" type="text" class="form-control" placeholder="Street" name="Street" value="{{homestat.Street}}">
         </div>
         <div class="col">
-            <label for="fldlong">City Longitude</label>
-            <input class="form-control" id="fldlong" name="fldLong" placeholder="City Longitude" type="text" value="{{city.fldLong}}">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="fldCapitalStatus">Capital Status</label>
-
-            <input class="form-control" id="fldCapitalStatus" name="fldCapitalStatus" placeholder="Capital Status"
-                   type="text" value="{{city.fldCapitalStatus}}">
+            <label for="City"> City</label>
+            <input id="City" type="text" class="form-control" placeholder="City" name="City" value="{{homestat.City}}">
         </div>
         <div class="col">
-            <label for="fldPopulation">City Population</label>
-            <input class="form-control" id="fldPopulation" name="fldPopulation" placeholder="Population" type="text" value="{{city.fldPopulation}}">
+            <label for="Zip_Code">Zip Code</label>
+            <input id="Zip_Code" type="text" class="form-control" placeholder="Zip Code" name="Zip_Code" value="{{homestat.Zip_Code}}">
         </div>
-    <button class="btn btn-success" type="submit">Save</button>
+        <div class="col">
+            <label for="Selling_Price">Your Age</label>
+            <input id="Selling_Price" type="text" class="form-control" placeholder="Selling Price" name="Selling_Price" value="{{homestat.Selling_Price}}">
+        </div>
+        <div class="col">
+            <label for="Listing_Price">Your Age</label>
+            <input id="Listing_Price" type="text" class="form-control" placeholder="Listing Price" name="Listing_Price" value="{{homestat.Listing_Price}}">
+        </div>
+        <div class="col">
+            <label for="Sq_ft">Your Age</label>
+            <input id="Sq_ft" type="text" class="form-control" placeholder="Square Feet" name="Sq_ft" value="{{homestat.Sq_ft}}">
+        </div>
+        <div class="col">
+            <label for="Rooms"> Rooms</label>
+            <input id="Rooms" type="text" class="form-control" placeholder="Rooms" name="Rooms" value="{{homestat.Rooms}}">
+        </div>
+        <div class="col">
+            <label for="Baths">Baths</label>
+            <input id="Baths" type="text" class="form-control" placeholder="Baths" name="Baths" value="{{homestat.Baths}}">
+        </div>
+        <div class="col">
+            <label for="Age_of_House">Your Age</label>
+            <input id="Age_of_House" type="text" class="form-control" placeholder="Age of House" name="Age_of_House" value="{{homestat.Age_of_House}}">
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
     </div>
 </form>
 {% endblock %}
+
+
+
+

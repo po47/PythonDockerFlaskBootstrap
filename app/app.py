@@ -116,7 +116,7 @@ def api_delete(city_id) -> str:
     sql_delete_query = """DELETE FROM tblCitiesImport WHERE id = %s """
     cursor.execute(sql_delete_query, city_id)
     mysql.get_db().commit()
-    resp = Response(status=210, mimetype='application/json')
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 

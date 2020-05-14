@@ -4,42 +4,43 @@
     <div class="row">
         <div class="col">
             <label for="fldName">City Name</label>
-            <input id="fldName" type="text" class="form-control" placeholder="City Name" name="fldName" value="{{city.fldName}}">
+            <input class="form-control" id="fldName" name="fldName" placeholder="City Name" type="text" value="{{city.fldName}}">
         </div>
+
         <div class="col">
             <label for="fldAbbreviation">City Abbreviation</label>
-            <input id="fldAbbreviation" type="text" class="form-control" placeholder="City Abbreviation"
-                   name="fldAbbreviation" value="{{city.fldAbbreviation}}">
+            <input class="form-control" id="fldAbbreviation" name="fldAbbreviation" placeholder="City Abbreviation"
+                   type="text" value="{{city.fldAbbreviation}}">
         </div>
+
         <div class="col">
             <label for="fldCountry">City Country</label>
-            <input id="fldCountry" type="text" class="form-control" placeholder="City Country" name="fldCountry" value="{{city.fldCountry}}">
+            <input class="form-control" id="fldCountry" name="fldCountry" placeholder="City Country" type="text" value="{{city.fldCountry}}">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
             <label for="fldLat">City Latitude</label>
-            <input id="fldLat" type="text" class="form-control" placeholder="City Latitude" name="fldLat" value="{{city.fldLat}}">
+            <input class="form-control" id="fldLat" name="fldLat" placeholder="City Latitude" type="text" value="{{city.fldLat}}">
         </div>
         <div class="col">
             <label for="fldlong">City Longitude</label>
-            <input id="fldlong" type="text" class="form-control" placeholder="City Longitude" name="fldLong" value="{{city.fldLong}}">
+            <input class="form-control" id="fldlong" name="fldLong" placeholder="City Longitude" type="text" value="{{city.fldLong}}">
         </div>
     </div>
     <div class="row">
         <div class="col">
             <label for="fldCapitalStatus">Capital Status</label>
 
-            <input id="fldCapitalStatus" type="text" class="form-control" placeholder="Capital Status"
-                   name="fldCapitalStatus" value="{{city.fldCapitalStatus}}">
+            <input class="form-control" id="fldCapitalStatus" name="fldCapitalStatus" placeholder="Capital Status"
+                   type="text" value="{{city.fldCapitalStatus}}">
         </div>
         <div class="col">
             <label for="fldPopulation">City Population</label>
-            <input id="fldPopulation" type="text" class="form-control" placeholder="Population" name="fldPopulation" value="{{city.fldPopulation}}">
+            <input class="form-control" id="fldPopulation" name="fldPopulation" placeholder="Population" type="text" value="{{city.fldPopulation}}">
         </div>
+    <button class="btn btn-success" type="submit">Save</button>
     </div>
-    <button type="submit" class="btn btn-success">Save</button>
-
 </form>
 {% endblock %}

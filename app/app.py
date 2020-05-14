@@ -46,7 +46,7 @@ def form_update_post(homestat_id):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Street'), request.form.get('City'), request.form.get('Zip_Code'),
                  request.form.get('Selling_Price'), request.form.get('Listing_Price'),
-                 request.form.get('Sqt_ft'), request.form.get('Rooms'), request.form.get('Baths'),
+                 request.form.get('Sq_ft'), request.form.get('Rooms'), request.form.get('Baths'),
                  request.form.get('Age_of_House'), homestat_id)
     sql_update_query = """UPDATE homestats t SET t.Street= %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price = %s, t.Listing_Price= %s, 
     t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_f_House = %s WHERE t.id = %s """
@@ -65,9 +65,9 @@ def form_insert_post():
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Street'), request.form.get('City'), request.form.get('Zip_Code'),
                  request.form.get('Selling_Price'), request.form.get('Listing_Price'),
-                 request.form.get('Sqt_ft'), request.form.get('Rooms'), request.form.get('Baths'),
+                 request.form.get('Sq_ft'), request.form.get('Rooms'), request.form.get('Baths'),
                  request.form.get('Age_of_House'))
-    sql_insert_query = """INSERT INTO homestats (Street,City,Zip_Code,Selling_Price,Listing_Price,Sqt_ft, Rooms, Baths, Age_of_House) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    sql_insert_query = """INSERT INTO homestats (Street,City,Zip_Code,Selling_Price,Listing_Price,Sq_ft, Rooms, Baths, Age_of_House) VALUES (%s, %s,%s, %s,%s, %s,%s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)

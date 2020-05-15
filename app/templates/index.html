@@ -18,14 +18,14 @@
     {% for home in homestats %}
     <tr>
         <td><a href="view/{{homestat.id}}">{{ homestat.Street }}</a></td>
-        <td>{{ city.City }}</td>
-        <td>{{ city.Zip_Code }}</td>
-        <td>{{ city.Selling_Price }}</td>
-        <td>{{ city.Listing_Price }}</td>
-        <td>{{ city.Sq_ft }}</td>
-        <td>{{ city.Rooms }}</td>
-        <td>{{ city.Baths }}</td>
-        <td>{{ city.Age_of_House }}</td>
+        <td>{{ homestat.City }}</td>
+        <td>{{ homestat.Zip_Code }}</td>
+        <td>{{ homestat.Selling_Price }}</td>
+        <td>{{ homestat.Listing_Price }}</td>
+        <td>{{ homestat.Sq_ft }}</td>
+        <td>{{ homestat.Rooms }}</td>
+        <td>{{ homestat.Baths }}</td>
+        <td>{{ homestat.Age_of_House }}</td>
     </tr>
     {% endfor %}
     </tbody>

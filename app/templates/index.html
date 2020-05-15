@@ -3,25 +3,29 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">City Name</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-        <th scope="col">Country</th>
-        <th scope="col">Abbreviation</th>
-        <th scope="col">Capital Status</th>
-        <th scope="col">Population</th>
+        <th scope="col">Street</th>
+        <th scope="col">City</th>
+        <th scope="col">Zip Code</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Listing Price</th>
+        <th scope="col">Square Feet</th>
+        <th scope="col">Rooms</th>
+        <th scope="col">Baths</th>
+        <th scope="col">Age of House</th>
     </tr>
     </thead>
     <tbody>
     {% for city in cities %}
     <tr>
-        <td><a href="view/{{city.id}}">{{ city.fldName }}</a></td>
-        <td>{{ city.fldLat }}</td>
-        <td>{{ city.fldLong }}</td>
-        <td>{{ city.fldCountry }}</td>
-        <td>{{ city.fldAbbreviation }}</td>
-        <td>{{ city.fldCapitalStatus }}</td>
-        <td>{{ city.fldPopulation }}</td>
+        <td><a href="view/{{homestat.id}}">{{ homestat.Street }}</a></td>
+        <td>{{ city.City }}</td>
+        <td>{{ city.Zip_Code }}</td>
+        <td>{{ city.Selling_Price }}</td>
+        <td>{{ city.Listing_Price }}</td>
+        <td>{{ city.Sq_ft }}</td>
+        <td>{{ city.Rooms }}</td>
+        <td>{{ city.Baths }}</td>
+        <td>{{ city.Age_of_House }}</td>
     </tr>
     {% endfor %}
     </tbody>

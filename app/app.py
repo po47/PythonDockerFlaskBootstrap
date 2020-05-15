@@ -1,4 +1,3 @@
-from typing import List, Dict
 import simplejson as json
 from flask import Flask, request, Response, redirect
 from flask import render_template
@@ -88,7 +87,7 @@ def api_browse() -> str:
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM homestats')
     result = cursor.fetchall()
-    json_result = json.dumps(result);
+    json_result = json.dumps(result)
     resp = Response(json_result, status=200, mimetype='application/json')
     return resp
 
@@ -98,7 +97,7 @@ def api_retrieve(homestat_id) -> str:
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM homestats WHERE id=%s', homestat_id)
     result = cursor.fetchall()
-    json_result = json.dumps(result);
+    json_result = json.dumps(result)
     resp = Response(json_result, status=200, mimetype='application/json')
     return resp
 
@@ -116,8 +115,8 @@ def api_edit(homestat_id) -> str:
     inputData = (
         content['Street'], content['City'], content['Zip_Code'], content['Selling_Price'], content['Listing_Price'],
         content['Sq_ft'], content['Rooms'], content['Baths'], content['Age_of_House'], homestat_id)
-    sql_update_query = """UPDATE homestats t SET t.Street= %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price = %s, t.Listing_Price= %s, 
-    t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_of_House = %s WHERE t.id = %s """
+    sql_update_query = """UPDATE homestats t SET t.Street= %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price = %s, 
+    t.Listing_Price= %s, t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_of_House = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')

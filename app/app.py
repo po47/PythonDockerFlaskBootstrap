@@ -21,7 +21,7 @@ def index():
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM homestats')
     result = cursor.fetchall()
-    return render_template('index.html', title='Home', user=user, homestats=result)
+    return render_template('index.html', title='Home', user=user, homestats=result, homestat=result[0])
 
 
 @app.route('/view/<int:homestat_id>', methods=['GET'])
@@ -119,7 +119,7 @@ def api_edit(homestat_id) -> str:
     t.Listing_Price= %s, t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_of_House = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
-    resp = Response(status=201, mimetype='application/json')
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 

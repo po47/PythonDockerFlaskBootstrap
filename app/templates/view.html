@@ -2,20 +2,24 @@
 {% block content %}
 
 <div class="card" class="m-5 p-2">
-    <h5 class="card-title">{{ city.fldName }} - {{ city.fldAbbreviation }}</h5>
+    <h5 class="card-title">{{ homestat.Street }} - {{ homestat.Street }}</h5>
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ city.fldLat }}</li>
-        <li class="list-group-item">{{ city.fldLong }}</li>
-        <li class="list-group-item">{{ city.fldCapitalStatus }}</li>
-        <li class="list-group-item">{{ city.fldCountry }}</li>
-        <li class="list-group-item">{{ city.fldPopulation }}</li>
+        <li class="list-group-item">{{ homestat.Street }}</li>
+        <li class="list-group-item">{{ homestat.City }}</li>
+        <li class="list-group-item">{{ homestat.Zip_Code }}</li>
+        <li class="list-group-item">{{ homestat.Selling_Price }}</li>
+        <li class="list-group-item">{{ homestat.Listing_Price }}</li>
+        <li class="list-group-item">{{ homestat.Sq_ft }}</li>
+        <li class="list-group-item">{{ homestat.Rooms }}</li>
+        <li class="list-group-item">{{ homestat.Baths }}</li>
+        <li class="list-group-item">{{ homestat.Age_of_House }}</li>
     </ul>
     <div class="card-body">
-        <a href="/edit/{{city.id}}" class="card-link btn btn-primary">edit</a>
+        <a href="/edit/{{homestat.id}}" class="card-link btn btn-primary">edit</a>
     </div>
 </div>
-<form action="/delete/{{city.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+<form action="/delete/{{homestat.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
 
 
 {% endblock %}

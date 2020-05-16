@@ -44,11 +44,11 @@ def form_edit_get(homestat_id):
 def form_update_post(homestat_id):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Street'), request.form.get('City'), request.form.get('Zip_Code'),
-                 request.form.get('Selling_Price'), request.form.get('Listing_Price'),
-                 request.form.get('Sq_ft'), request.form.get('Rooms'), request.form.get('Baths'),
-                 request.form.get('Age_of_House'), homestat_id)
-    sql_update_query = """UPDATE homestats t SET t.Street= %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price = %s, 
-    t.Listing_Price= %s, t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_of_House = %s WHERE t.id = %s """
+                 request.form.get('Selling_Price'), request.form.get('Listing_Price'), request.form.get('Sq_ft'),
+                 request.form.get('Rooms'),
+                 request.form.get('Baths'), request.form.get('Age_of_House'), homestat_id)
+    sql_update_query = """UPDATE homestats t SET t.Street = %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price_in = %s,
+    t.Listing_Price = %s, t.Sq_ft = %s,t.Rooms = %s,t.Baths = %s,t.Age_of_House = %s, WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
@@ -56,7 +56,7 @@ def form_update_post(homestat_id):
 
 @app.route('/homestats/new', methods=['GET'])
 def form_insert_get():
-    return render_template('new.html', title='New Home Form')
+    return render_template('new.html', title='New Homestat Form')
 
 
 @app.route('/homestats/new', methods=['POST'])
@@ -64,10 +64,10 @@ def form_insert_post():
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Street'), request.form.get('City'), request.form.get('Zip_Code'),
                  request.form.get('Selling_Price'), request.form.get('Listing_Price'),
-                 request.form.get('Sq_ft'), request.form.get('Rooms'), request.form.get('Baths'),
-                 request.form.get('Age_of_House'))
-    sql_insert_query = """INSERT INTO homestats (Street,City,Zip_Code,Selling_Price,Listing_Price,Sq_ft, Rooms, 
-    Baths, Age_of_House) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+                 request.form.get('Listing_Price'), request.form.get('Sq_ft'), request.form.get('Rooms'),
+                 request.form.get('Baths'), request.form.get('Age_of_House'))
+    sql_insert_query = """INSERT INTO homestats (Street, City, Zip_Code, Selling_Price, Listing_Price, Sq_ft, Rooms, 
+    Baths, Age_of_House) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
@@ -87,7 +87,7 @@ def api_browse() -> str:
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM homestats')
     result = cursor.fetchall()
-    json_result = json.dumps(result)
+    json_result = json.dumps(result);
     resp = Response(json_result, status=200, mimetype='application/json')
     return resp
 
@@ -97,7 +97,7 @@ def api_retrieve(homestat_id) -> str:
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM homestats WHERE id=%s', homestat_id)
     result = cursor.fetchall()
-    json_result = json.dumps(result)
+    json_result = json.dumps(result);
     resp = Response(json_result, status=200, mimetype='application/json')
     return resp
 
@@ -110,26 +110,13 @@ def api_add() -> str:
 
 @app.route('/api/v1/homestats/<int:homestat_id>', methods=['PUT'])
 def api_edit(homestat_id) -> str:
-    cursor = mysql.get_db().cursor()
-    content = request.json
-    inputData = (
-        content['Street'], content['City'], content['Zip_Code'], content['Selling_Price'], content['Listing_Price'],
-        content['Sq_ft'], content['Rooms'], content['Baths'], content['Age_of_House'], homestat_id)
-    sql_update_query = """UPDATE homestats t SET t.Street= %s, t.City = %s, t.Zip_Code = %s, t.Selling_Price = %s, 
-    t.Listing_Price= %s, t.Sqt_ft = %s, t.Rooms = %s, t.Baths = %s, t.Age_of_House = %s WHERE t.id = %s """
-    cursor.execute(sql_update_query, inputData)
-    mysql.get_db().commit()
-    resp = Response(status=200, mimetype='application/json')
+    resp = Response(status=201, mimetype='application/json')
     return resp
 
 
-@app.route('/api/v1/homestats/<int:homestat_id>', methods=['DELETE'])
+@app.route('/api/homestats/<int:homestat_id>', methods=['DELETE'])
 def api_delete(homestat_id) -> str:
-    cursor = mysql.get_db().cursor()
-    sql_delete_query = """DELETE FROM homestats WHERE id = %s """
-    cursor.execute(sql_delete_query, homestat_id)
-    mysql.get_db().commit()
-    resp = Response(status=200, mimetype='application/json')
+    resp = Response(status=210, mimetype='application/json')
     return resp
 
 

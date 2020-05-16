@@ -3,29 +3,21 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Street</th>
-        <th scope="col">City</th>
-        <th scope="col">Zip Code</th>
-        <th scope="col">Selling Price</th>
-        <th scope="col">Listing Price</th>
-        <th scope="col">Square Feet</th>
-        <th scope="col">Rooms</th>
-        <th scope="col">Baths</th>
-        <th scope="col">Age of House</th>
+        <th scope="col">Your Name</th>
+        <th scope="col">Your Sex</th>
+        <th scope="col">Your Age</th>
+        <th scope="col">Your Height</th>
+        <th scope="col">Your Weight</th>
     </tr>
     </thead>
     <tbody>
-    {% for homestat in homestats %}
+    {% for biostat in biostats %}
     <tr>
-        <td><a href="view/{{homestat.id}}">{{  homestat.Street  }}</a></td>
-        <td>{{ homestat.City }}</td>
-        <td>{{ homestat.Zip_Code }}</td>
-        <td>{{ homestat.Selling_Price }}</td>
-        <td>{{ homestat.Listing_Price }}</td>
-        <td>{{ homestat.Sq_ft }}</td>
-        <td>{{ homestat.Rooms }}</td>
-        <td>{{ homestat.Baths }}</td>
-        <td>{{ homestat.Age_of_House }}</td>
+        <td><a href="view/{{biostat.id}}">{{ biostat.YourName }}</a></td>
+        <td>{{ biostat.Sex }}</td>
+        <td>{{ biostat.Age }}</td>
+        <td>{{ biostat.Height_in }}</td>
+        <td>{{ biostat.Weight_lbs }}</td>
     </tr>
     {% endfor %}
     </tbody>

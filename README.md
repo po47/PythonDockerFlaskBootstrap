@@ -5,7 +5,7 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 
 [View Assignment Video Here](https://youtu.be/QbMWNgrfAFg)
 
-#Website Homepaeg Screenshot 
+#Website Homepage Screenshot 
 ![pycharm_data_query](screenshots/Homepage.png)
 
 #Added Record Screenshot 

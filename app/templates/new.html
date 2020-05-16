@@ -1,51 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/homestats/new" method="POST">
+<form action="/biostats/new" method="POST">
     <div class="row">
         <div class="col">
-            <label for="Street">Street</label>
-            <input id="Street" type="text" class="form-control" placeholder="Street" name="Street">
+            <label for="YourName">Your Name</label>
+            <input id="YourName" type="text" class="form-control" placeholder="Your Name" name="YourName">
         </div>
         <div class="col">
-            <label for="City">City</label>
-            <input id="City" type="text" class="form-control" placeholder="City"
-                   name="City">
+            <label for="Sex">Your Sex</label>
+            <input id="Sex" type="text" class="form-control" placeholder="Your Sex"
+                   name="Sex">
         </div>
         <div class="col">
-            <label for="Zip_Code">Zip Code</label>
-            <input id="Zip_Code" type="text" class="form-control" placeholder="Zip Code" name="Zip_Code">
+            <label for="Age">Your Age</label>
+            <input id="Age" type="text" class="form-control" placeholder="Your Age" name="Age">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <label for="Selling_Price">Selling Price</label>
-            <input id="Selling_Price" type="text" class="form-control" placeholder="Selling Price" name="Selling_Price">
+            <label for="Height_in">Your Height in inches</label>
+            <input id="Height_in" type="text" class="form-control" placeholder="Your Height in inches" name="Height_in">
         </div>
         <div class="col">
-            <label for="Listing_Price">Listing Price</label>
-            <input id="Listing_Price" type="text" class="form-control" placeholder="Listing Price" name="Listing_Price">
+            <label for="Weight_lbs">Your Weight</label>
+            <input id="Weight_lbs" type="text" class="form-control" placeholder="Your Weight" name="Weight_lbs">
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <label for="Sq_ft">Square Foot</label>
-            <input id="Sq_ft" type="text" class="form-control" placeholder="Square Foot" name="Sq_ft">
-        </div>
-        <div class="col">
-            <label for="Rooms">Rooms</label>
-            <input id="Rooms" type="text" class="form-control" placeholder="Rooms" name="Rooms">
-        </div>
-        <div class="col">
-            <label for="Baths">Baths</label>
-            <input id="Baths" type="text" class="form-control" placeholder="Baths" name="Baths">
-        </div>
-        <div class="col">
-            <label for="Age_of_House">Age_of_House</label>
-            <input id="Age_of_House" type="text" class="form-control" placeholder="Age of House" name="Age_of_House">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success">Create</button>
+    <button type="submit" class="btn btn-success">Submit</button>
 
 </form>
 

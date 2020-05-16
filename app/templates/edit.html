@@ -1,48 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/edit/{{homestat.id}}" method="post">
+<form action="/edit/{{biostat.id}}" method="post">
     <div class="row">
         <div class="col">
-            <label for="Street">Street</label>
-            <input id="Street" type="text" class="form-control" placeholder="Street" name="Street" value="{{homestat.Street}}">
+            <label for="YourName">Person's Name</label>
+            <input id="YourName" type="text" class="form-control" placeholder="Your Name" name="YourName" value="{{biostat.YourName}}">
         </div>
         <div class="col">
-            <label for="City"> City</label>
-            <input id="City" type="text" class="form-control" placeholder="City" name="City" value="{{homestat.City}}">
+            <label for="Sex">Your Sex</label>
+            <input class="form-control" id="Sex" name="Sex" placeholder="Your Sex" type="text" value="{{biostat.Sex}}">
         </div>
         <div class="col">
-            <label for="Zip_Code">Zip Code</label>
-            <input id="Zip_Code" type="text" class="form-control" placeholder="Zip Code" name="Zip_Code" value="{{homestat.Zip_Code}}">
+            <label for="Age">Your Age</label>
+            <input id="Age" type="text" class="form-control" placeholder="Your Age" name="Age" value="{{biostat.Age}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="Height_in">Your Height</label>
+            <input id="Height_in" type="text" class="form-control" placeholder="Your Height" name="Height_in" value="{{biostat.Height_in}}">
         </div>
         <div class="col">
-            <label for="Selling_Price">Your Age</label>
-            <input id="Selling_Price" type="text" class="form-control" placeholder="Selling Price" name="Selling_Price" value="{{homestat.Selling_Price}}">
+            <label for="Weight_lbs">Your Weight</label>
+            <input id="Weight_lbs" type="text" class="form-control" placeholder="Your Weight" name="Weight_lbs" value="{{biostat.Weight_lbs}}">
         </div>
-        <div class="col">
-            <label for="Listing_Price">Your Age</label>
-            <input id="Listing_Price" type="text" class="form-control" placeholder="Listing Price" name="Listing_Price" value="{{homestat.Listing_Price}}">
-        </div>
-        <div class="col">
-            <label for="Sq_ft">Your Age</label>
-            <input id="Sq_ft" type="text" class="form-control" placeholder="Square Feet" name="Sq_ft" value="{{homestat.Sq_ft}}">
-        </div>
-        <div class="col">
-            <label for="Rooms"> Rooms</label>
-            <input id="Rooms" type="text" class="form-control" placeholder="Rooms" name="Rooms" value="{{homestat.Rooms}}">
-        </div>
-        <div class="col">
-            <label for="Baths">Baths</label>
-            <input id="Baths" type="text" class="form-control" placeholder="Baths" name="Baths" value="{{homestat.Baths}}">
-        </div>
-        <div class="col">
-            <label for="Age_of_House">Your Age</label>
-            <input id="Age_of_House" type="text" class="form-control" placeholder="Age of House" name="Age_of_House" value="{{homestat.Age_of_House}}">
-        </div>
-        <button type="submit" class="btn btn-success">Save</button>
+
+    <button type="submit" class="btn btn-success">Save</button>
     </div>
 </form>
 {% endblock %}
-
-
 
 

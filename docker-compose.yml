@@ -10,7 +10,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: "MySQL_Database_homestats"
+    container_name: "MySQL_Database_biostats"
     ports:
       - "32000:3306"
     environment:

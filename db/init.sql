@@ -3,7 +3,7 @@ use bioData;
 
 CREATE TABLE IF NOT EXISTS biostats (
     `id` INT AUTO_INCREMENT,
-    `YourName` VARCHAR(6) CHARACTER SET utf8,
+    `YourName` VARCHAR(10) CHARACTER SET utf8,
     `Sex` VARCHAR(10) CHARACTER SET utf8,
     `Age` INT,
     `Height_in` INT,
@@ -29,4 +29,4 @@ INSERT INTO biostats (YourName,Sex,Age,Height_in,Weight_lbs) VALUES
     ('Levi','       "M"',   29,       70,      145),
     ('Page','       "F"',   31,       67,      125),
     ('Quin','       "M"',   26,       71,      176),
-    ('Lexi','       "F"',   21,       65,      100);
+    ('Lexi','       "F"',   25,       65,      100);
